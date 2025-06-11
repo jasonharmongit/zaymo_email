@@ -11,7 +11,7 @@ load_dotenv()
 
 # Email details
 from_email = "contactjasonharmon@gmail.com"
-to_email = "jasonharmonboy@gmail.com"
+to_email = "danielkentjones@gmail.com"
 subject = "Welcome Jason to the future of email!"
 
 # Get current date in the format: Sat, Jun 14, 2025
