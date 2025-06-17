@@ -1,4 +1,5 @@
 import React from "react";
+import { FiLink } from "react-icons/fi";
 import BlackButton from "./components/black-button.jsx";
 
 export default function GoatedEmail() {
@@ -10,7 +11,10 @@ export default function GoatedEmail() {
         <style amp4email-boilerplate="true">{`body{visibility:hidden}`}</style>
       </head>
       <body>
-        <BlackButton>Hello World</BlackButton>
+        <BlackButton>
+          <FiLink style={{ verticalAlign: "middle", marginRight: 6 }} />
+          Hello World
+        </BlackButton>
       </body>
     </html>
   );

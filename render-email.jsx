@@ -17,6 +17,6 @@ const htmlNoMsoTextRaise = htmlNoMsoPaddingAlt.replace(/mso-text-raise:[^;"']*;?
 // Combine all transformations
 const fixedHtml = `${docType}${htmlNoMsoTextRaise}`;
 
-fs.writeFileSync("converted_email.html", fixedHtml);
+fs.writeFileSync("converted-email.html", fixedHtml);
 
-console.log("HTML written to converted_email.html");
+console.log("HTML written to converted-email.html");
