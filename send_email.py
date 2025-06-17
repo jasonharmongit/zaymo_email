@@ -11,8 +11,8 @@ load_dotenv()
 
 # Email details
 from_email = "contactjasonharmon@gmail.com"
-to_email = "danielkentjones@gmail.com"
-subject = "Welcome Jason to the future of email!"
+to_email = "santi@zaymo.com"
+subject = "jason made an amp email"
 
 # Get current date in the format: Sat, Jun 14, 2025
 current_date = datetime.now().strftime("%a, %b %d, %Y")
