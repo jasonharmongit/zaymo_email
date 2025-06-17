@@ -12,20 +12,39 @@ load_dotenv()
 # Email details
 from_email = "contactjasonharmon@gmail.com"
 to_email = "santi@zaymo.com"
-subject = "jason made an amp email"
+subject = "jason finally did it"
 
 # Get current date in the format: Sat, Jun 14, 2025
 current_date = datetime.now().strftime("%a, %b %d, %Y")
 
+intro_html = (
+    "Couldn't get it done in 30 minutes, but I did get it done. "
+    "This email uses react-email buttons and is fully AMP compliant. "
+    "What I currently lack in knowledge, I promise to make up for in time + effort."
+)
+signoff_html = "<br><br>Best,<br>Jason"
+
 # Read HTML content from file and replace placeholder
-with open("calendar_email_box.html", "r", encoding="utf-8") as f:
-    html = f.read().replace("{{CURRENT_DATE}}", current_date)
+with open("converted-email.html", "r", encoding="utf-8") as f:
+    html_content = f.read().replace("{{CURRENT_DATE}}", current_date)
+
+# Combine for the HTML part
+html = f"<div>{intro_html}</div>{html_content}{signoff_html}"
+
+# Plain text body
+text = (
+    "Couldn't get it done in 30 minutes, but I did get it done. "
+    "This email uses react-email buttons and is fully AMP compliant. "
+    "What I currently lack in knowledge, I promise to make up for in time + effort."
+    "\n\nBest,\nJason"
+)
 
 # Create message
 msg = MIMEMultipart("alternative")
 msg["Subject"] = subject
 msg["From"] = from_email
 msg["To"] = to_email
+msg.attach(MIMEText(text, "plain"))
 msg.attach(MIMEText(html, "html"))
 
 # Send the email (using Gmail SMTP)

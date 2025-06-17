@@ -1,10 +1,10 @@
 import { Button } from "@react-email/components";
 import React from "react";
 
-export default function BlackButton({ children }) {
+export default function BlackButton({ link, children }) {
   return (
     <Button
-      href="https://example.com"
+      href={link}
       style={{
         backgroundColor: "#000000",
         color: "white",
